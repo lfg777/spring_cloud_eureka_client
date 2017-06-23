@@ -20,6 +20,12 @@ public class MyController {
 
     @RequestMapping("/{applicationName}")
     public List<ServiceInstance> helloWord(@PathVariable String applicationName) {
+
         return this.discoveryClient.getInstances(applicationName);
+    }
+
+    @RequestMapping("/goAhead")
+    public String goAhead(){
+        return "welcome to here !";
     }
 }
